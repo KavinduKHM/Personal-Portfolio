@@ -55,5 +55,21 @@ export const projects = [
     description: "Developed a user-friendly web-based Health Insurance Management System titled ‘Health First Insurance’ as a group project . This application offers a user-friendly interface and includes key functionalities such as Requesting claims, Insurance claims processing, Payment management, Customer profile handling, Insurance plan administration, and secure user authentication. The system was designed to enhance usability and streamline insurance operations for both customers and administrator",
     technologies: ["HTML","CSS", "JavaScript","PHP","SQL", "GitHub"],
     link: "https://github.com/KavinduKHM/Health-First-Insurance"
-  }
+    },
+    {
+      _id: "proj-008",
+      slug: "wedding-planning-mobile-app",
+      title: "Wedding Planning Mobile App",
+      description: "Designed and developed a compact wedding planning mobile application featuring a personalized homepage with an image-based quick-access grid and persistent BottomNavigationView. Implemented core modules including a Vendor Marketplace, Timeline Creator, Task Manager, and Budget Planner for end-to-end event planning. Built using Kotlin and Java with Gradle, leveraging AndroidX (ConstraintLayout, CardView), Material Components, and Jetpack libraries for UI structure and navigation.",
+      technologies: ["Kotlin", "Java", "Gradle", "AndroidX", "Material Components", "Jetpack", "GitHub"],
+      link: "https://github.com/KavinduKHM/Wedding-Planning-Mobile-App"
+    },
+    {
+      _id: "proj-009",
+      slug: "habit-tracker-mobile-app",
+      title: "Habit Tracker Mobile App",
+      description: "Designed and developed Wellness Harmony, a mobile habit-tracking application for managing habits, water intake, and mood using a clean Material Design interface. Built with Java and Kotlin using the Android SDK, Constraint Layout/LinearLayout, and Material Components. Implemented quick-add actions, hydration tracking with progress bars and streaks, mood analytics, a daily progress dashboard, achievements, and customizable goals and reminders, with efficient local data persistence (e.g., SharedPreferences) to support offline usability.",
+      technologies: ["Kotlin", "Java", "Android SDK", "ConstraintLayout", "LinearLayout", "Material Components", "SharedPreferences", "GitHub"],
+      link: "https://github.com/KavinduKHM/Habit-Tracker-Mobile-App"
+    }
 ];

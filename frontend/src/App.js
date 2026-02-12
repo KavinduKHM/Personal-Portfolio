@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -7,6 +8,21 @@ import Contact from "./components/Contact";
 import CaseStudy from "./components/CaseStudy";
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return (
+      <div className="splash-screen">
+        <div className="splash-logo">K</div>
+      </div>
+    );
+  }
+
   return (
     <Router>
       <Navbar />
