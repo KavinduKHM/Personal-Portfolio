@@ -33,7 +33,7 @@ export const caseStudies = {
         caption: "Dashboard with First Year and Second Year semester cards with yearwise progress bars."
       },
       {
-        src: "/photos/Specialization_selector.png",
+        src: "/photos/Specialization_Selector.png",
         alt: "Specialization selector",
         caption: "Select a specialization to load the correct module set"
       },
