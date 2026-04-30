@@ -5,9 +5,20 @@ export default function Contact() {
 
   const submit = (e) => {
     e.preventDefault();
-    // Frontend-only submission now that the backend has been removed
+
+    const recipient = "kavinduhewamadduma@gmail.com";
+    const subject = `Portfolio message from ${form.name || "(no name)"}`;
+    const body = [
+      `Name: ${form.name || ""}`,
+      `Email: ${form.email || ""}`,
+      "",
+      form.message || "",
+    ].join("\n");
+
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+
     setForm({ name: "", email: "", message: "" });
-    alert("Message sent! (Demo form – no backend required.)");
   };
 
   return (

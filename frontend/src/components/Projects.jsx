@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects as projectList } from "../data/projects";
+import { caseStudies } from "../data/caseStudies";
 
 // Generate a URL-friendly slug for stable case study links
 const slugify = text =>
@@ -9,28 +10,63 @@ const slugify = text =>
     .replace(/-+/g, "-") || "project";
 
 export default function Projects() {
-  // Use hardcoded projects from the frontend data file
   const projects = projectList;
 
   return (
     <section id="projects" className="page projects-section">
-      <h2 style={{color:"#63da6b"}}>Projects</h2>
-      <div className="project-grid">
-        {projects.map(project => {
-          const techList = Array.isArray(project.technologies)
-            ? project.technologies.join(", ")
-            : project.technologies || "Not specified";
+      <div className="container projects-hero">
+        <h1 className="projects-title">Featured <span className="projects-title-accent">Projects</span></h1>
+        <p className="projects-lede">A selection of architectural software solutions and engineering experiments built with modern technical stacks.</p>
+      </div>
 
+      <div className="container projects-grid">
+        {projects.map(project => {
+          const techs = Array.isArray(project.technologies) ? project.technologies : (project.technologies ? [project.technologies] : []);
           const slug = project.slug || slugify(project.title || project._id);
 
+          // prefer first case study screenshot when available
+          const study = caseStudies[slug];
+          const firstShot = study && Array.isArray(study.screenshots) && study.screenshots.length > 0 ? study.screenshots[0] : null;
+          // Only use an image if a case-study screenshot or explicit project.image exists.
+          const imgSrc = firstShot?.src || project.image || null;
+          const imgAlt = firstShot?.alt || project.title;
+
+          // generate initials for placeholder when no image is available
+          const initials = (project.title || project._id || '')
+            .split(/\s+/)
+            .filter(Boolean)
+            .slice(0,2)
+            .map(w => w[0].toUpperCase())
+            .join('');
+
           return (
-            <div className="card project-card" key={project._id || slug}>
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <p><strong>Technologies:</strong> {techList}</p>
-              <a href={project.link} target="_blank" rel="noreferrer">View Project →</a>
-              <Link to={`/projects/${slug}/case-study`} className="case-study-link">View case study →</Link>
-            </div>
+            <article className="card project-card" key={project._id || slug}>
+              {imgSrc ? (
+                <div className="project-media">
+                  <img src={imgSrc} alt={imgAlt} />
+                </div>
+              ) : (
+                <div className="project-media placeholder" aria-hidden>
+                  <span className="initials">{initials}</span>
+                </div>
+              )}
+
+              <div className="project-body">
+                <div className="project-tags">
+                  {techs.slice(0,3).map(t => (
+                    <span className="project-tag" key={t}>{t}</span>
+                  ))}
+                </div>
+
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-excerpt">{project.description}</p>
+
+                <div className="project-actions">
+                  <a className="project-link" href={project.link} target="_blank" rel="noreferrer">VIEW PROJECT ↗</a>
+                  <Link className="case-study-link" to={`/projects/${slug}/case-study`}>CASE STUDY</Link>
+                </div>
+              </div>
+            </article>
           );
         })}
       </div>

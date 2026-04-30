@@ -8,9 +8,13 @@ export default function Navbar() {
   const toggleMenu = () => setOpen(o => !o);
   const closeMenu = () => setOpen(false);
 
+  const navLinkClass = ({ isActive }) => (isActive ? "active" : undefined);
+
   return (
     <header className="navbar">
-      <h2 className="logo">Kavindu</h2>
+      <NavLink to="/" end className="logo" onClick={closeMenu} aria-label="Home">
+        KH
+      </NavLink>
 
       <button
         className="navbar-toggle"
@@ -23,12 +27,26 @@ export default function Navbar() {
         <span></span>
       </button>
 
-      <nav className={open ? "navbar-links open" : "navbar-links"}>
-        <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
-        <NavLink to="/about" onClick={closeMenu}>About</NavLink>
-        <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
-        <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
-      </nav>
+      <div className={open ? "navbar-right open" : "navbar-right"}>
+        <nav className="navbar-links" aria-label="Primary">
+          <NavLink to="/" end onClick={closeMenu} className={navLinkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={closeMenu} className={navLinkClass}>
+            About
+          </NavLink>
+          <NavLink to="/projects" onClick={closeMenu} className={navLinkClass}>
+            Projects
+          </NavLink>
+          <NavLink to="/contact" onClick={closeMenu} className={navLinkClass}>
+            Contact
+          </NavLink>
+        </nav>
+
+        <NavLink to="/contact" className="navbar-cta" onClick={closeMenu}>
+          Let's get started
+        </NavLink>
+      </div>
     </header>
   );
 }
