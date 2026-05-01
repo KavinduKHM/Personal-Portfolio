@@ -24,12 +24,11 @@ export default function Projects() {
           const techs = Array.isArray(project.technologies) ? project.technologies : (project.technologies ? [project.technologies] : []);
           const slug = project.slug || slugify(project.title || project._id);
 
-          // prefer first case study screenshot when available
+          // prefer explicit project.image first; fall back to first case-study screenshot
           const study = caseStudies[slug];
           const firstShot = study && Array.isArray(study.screenshots) && study.screenshots.length > 0 ? study.screenshots[0] : null;
-          // Only use an image if a case-study screenshot or explicit project.image exists.
-          const imgSrc = firstShot?.src || project.image || null;
-          const imgAlt = firstShot?.alt || project.title;
+          const imgSrc = project.image || firstShot?.src || null;
+          const imgAlt = project.imageAlt || firstShot?.alt || project.title;
 
           // generate initials for placeholder when no image is available
           const initials = (project.title || project._id || '')

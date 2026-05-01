@@ -43,9 +43,7 @@ export default function Navbar() {
           </NavLink>
         </nav>
 
-        <NavLink to="/contact" className="navbar-cta" onClick={closeMenu}>
-          Let's get started
-        </NavLink>
+        
       </div>
     </header>
   );
