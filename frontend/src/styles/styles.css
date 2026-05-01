@@ -492,6 +492,71 @@ section h2 {
   overflow: hidden;
 }
 
+/* NAVBAR mobile behaviour */
+.navbar .navbar-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px;
+}
+.navbar .navbar-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+}
+.navbar-right { display: flex; align-items:center; gap: 18px; }
+
+/* Mobile menu - hidden by default */
+.navbar-right .navbar-links { display:flex; gap:20px; }
+.navbar-right.open { }
+
+@media (max-width: 900px) {
+  .navbar { padding: 12px 18px; }
+  .navbar a { margin-left: 14px; }
+  .navbar .navbar-toggle { display: inline-flex; }
+  .navbar-right { position: absolute; right: 16px; top: 64px; background: rgba(11,19,38,0.98); backdrop-filter: blur(8px); padding: 12px; border-radius: 10px; display: none; flex-direction: column; min-width: 180px; box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+  .navbar-right.open { display: flex; }
+  .navbar-right .navbar-links { flex-direction: column; gap: 8px; }
+  .navbar .logo { font-size: 1rem; }
+}
+
+/* Global small-screen adjustments */
+@media (max-width: 768px) {
+  :root { --container-padding: 20px; }
+  .container { padding: 0 20px; }
+  .page { padding: 40px 0; }
+  .hero { padding: 80px 20px; }
+  .home h1 { font-size: 2rem; }
+  .home p { font-size: 1rem; }
+  .project-media { height: 160px; }
+  .card { padding: 16px; border-radius: 10px; }
+  .btn-primary { padding: 10px 16px; }
+  .contact-hero h1 { font-size: 1.6rem; }
+  .contact-hero .lede { font-size: 0.95rem; }
+  .contact-right { width: 100%; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-map img { height: 200px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .hero { padding: 64px 16px; }
+  .home h1 { font-size: 1.6rem; }
+  .contact-form input, .contact-form textarea { padding: 10px 10px; }
+  .project-media { height: 140px; }
+  .navbar-right { right: 8px; top: 56px; min-width: 140px; }
+}
+
 .hero-container {
   width: 100%;
 }
