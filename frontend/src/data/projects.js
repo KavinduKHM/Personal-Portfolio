@@ -1,5 +1,6 @@
 // Hardcoded project list used by the Projects component; update here to change portfolio entries.
 export const projects = [
+  
   {
     _id: "proj-001",
     slug: "sliit-gpa-calculator-for-all-specializations",
@@ -11,6 +12,15 @@ export const projects = [
   },
   {
     _id: "proj-002",
+    slug: "sliit-gpa-calculator-for-all-specializations",
+    image: "/photos/GPA.png",
+    title: "SLIIT GPA Calculator",
+    description: "Developed and deployed a web-based GPA Calculator for all SLIIT specializations from 3rd year onward, covering first- and second-year modules as well as compulsory and elective modules in later years. Implemented CGPA and WGPA calculations based on earned grades and completed credit counts, ensuring accurate academic evaluation",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "HTML", "CSS", "JavaScript","Github"],
+    link: "https://github.com/KavinduKHM/SLIIT-GPA-Calculator-For-All-Specializations"
+  },
+  {
+    _id: "proj-003",
     image: "/photos/Clinic.png",
     slug: "clinic-appointment-and-prescription-management-system",
     title: "Clinic Appointment & Prescription Management",
@@ -19,7 +29,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Clinic-Appointment-and-Prescription-Management-System"
   },
   {
-    _id: "proj-003",
+    _id: "proj-004",
     image: "/photos/chatbot.jpg",
     slug: "ai-chatbot-with-personalized-knowledgebase",
     title: "AI Chatbot with Personalized Knowledge Base",
@@ -28,7 +38,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/AI-Chatbot-With-Personalised-Knowledge-Base"
   },
   {
-    _id: "proj-004",
+    _id: "proj-005",
     slug: "real-time-white-board-sharing-app",
     image: "/photos/whiteboard.jpg",
     title: "Real-Time Whiteboard Sharing App",
@@ -37,7 +47,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Real-Time-White-Board-Sharing-App"
   },
   {
-    _id: "proj-005",
+    _id: "proj-006",
     slug: "personal-finance-tracker",
     image: "/photos/finance.png",
     title: "Personal Finance Tracker",
@@ -46,7 +56,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Personal-Finance-Tracker"
   },
   {
-    _id: "proj-006",
+    _id: "proj-007",
     slug: "online-school-information-management-system",
     image: "/photos/school.jpg",
     title: "Online School Information Management System",
@@ -55,7 +65,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Online-School-Information-Management-System"
   },
   {
-    _id: "proj-007",
+    _id: "proj-008",
     slug: "insurance-management-system",
     image: "/photos/insurance.jpg",
     title: "Insurance Management System",
@@ -64,7 +74,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Health-First-Insurance"
     },
     {
-      _id: "proj-008",
+      _id: "proj-009",
       slug: "wedding-planning-mobile-app",
       image: "/photos/wedding.jpg",
       title: "Wedding Planning Mobile App",
@@ -73,7 +83,7 @@ export const projects = [
       link: "https://github.com/KavinduKHM/Wedding-Planning-Mobile-App"
     },
     {
-      _id: "proj-009",
+      _id: "proj-010",
       slug: "habit-tracker-mobile-app",
       image: "/photos/habbit.jpg",
       title: "Habit Tracker Mobile App",
