@@ -3,7 +3,7 @@ import { caseStudies } from "../data/caseStudies";
 
 export default function CaseStudy() {
   const { slug } = useParams();
-  const study = caseStudies[slug];
+  const study = caseStudies?.[slug];
 
   const renderWithBreaks = (text) => {
     if (!text) return null;

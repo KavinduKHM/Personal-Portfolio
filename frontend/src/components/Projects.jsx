@@ -25,7 +25,7 @@ export default function Projects() {
           const slug = project.slug || slugify(project.title || project._id);
 
           // prefer explicit project.image first; fall back to first case-study screenshot
-          const study = caseStudies[slug];
+          const study = caseStudies?.[slug];
           const firstShot = study && Array.isArray(study.screenshots) && study.screenshots.length > 0 ? study.screenshots[0] : null;
           const imgSrc = project.image || firstShot?.src || null;
           const imgAlt = project.imageAlt || firstShot?.alt || project.title;

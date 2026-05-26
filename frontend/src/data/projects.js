@@ -3,15 +3,32 @@ export const projects = [
   
   {
     _id: "proj-001",
-    slug: "sliit-gpa-calculator-for-all-specializations",
-    image: "/photos/GPA.png",
-    title: "SLIIT GPA Calculator",
-    description: "Developed and deployed a web-based GPA Calculator for all SLIIT specializations from 3rd year onward, covering first- and second-year modules as well as compulsory and elective modules in later years. Implemented CGPA and WGPA calculations based on earned grades and completed credit counts, ensuring accurate academic evaluation",
-    technologies: ["MongoDB", "Express.js", "React", "Node.js", "HTML", "CSS", "JavaScript","Github"],
-    link: "https://github.com/KavinduKHM/SLIIT-GPA-Calculator-For-All-Specializations"
+    slug: "ELIXRA - Smart Healthcare Platform",
+    "image": "/photos/ELIXRA-Healthcare.png",
+    "title": "ELIXRA - AI-Enabled Smart Healthcare Appointment & Telemedicine Platform",
+    "description": "Cloud-native microservices healthcare platform enabling patients to book appointments, attend video consultations, upload medical reports, view prescriptions, and receive AI-powered symptom analysis. Doctors manage profiles, availability, conduct telemedicine sessions, and issue digital prescriptions. Implements service discovery (Eureka), API Gateway, JWT authentication, role-based access (Patient, Doctor, Admin). Integrates Agora for video, Cloudinary for document storage, Stripe/PayHere for payments, Twilio/SendGrid for notifications, and Google Gemini AI for symptom checker. Fully containerized with Docker and orchestrated on Kubernetes. Includes separate MySQL databases per service, Feign clients for inter-service communication, and comprehensive REST APIs.",
+    "technologies": [
+      "Java", "Spring Boot", "Spring Cloud", "Spring Security", "JWT",
+      "Eureka", "Spring Cloud Gateway", "OpenFeign",
+      "MySQL", "Hibernate/JPA", "Redis",
+      "React.js", "Axios", "jQuery",
+      "Docker", "Kubernetes (Minikube)", "kubectl",
+      "Agora.io", "Cloudinary", "Stripe", "Twilio", "SendGrid", "Google Gemini AI",
+      "Maven", "Lombok", "Git", "GitHub", "Postman"
+      ],
+    "link": "https://github.com/KavinduKHM/ELIXRA---Smart-Health-Care-Platform"
   },
   {
     _id: "proj-002",
+    slug: "rebuild-hub-disaster-relief-platform",
+    image: "/photos/Rebuild-Hub.png",
+    title: "Rebuild Hub - Crowdsourced Disaster Relief & Aid Management Platform",
+    description: "Full-stack disaster relief platform that connects donors, volunteers, and affected communities. Implements resource and inventory management, volunteer coordination, event and aid workflows, donation/payment processing, role-based authentication/authorization, Cloudinary media uploads, weather integration, input validations, and automated tests to ensure reliable API behavior and operational readiness",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "HTML", "CSS", "JavaScript","Github","Vite", "Cloudinary", "Jest","Stripe", "Google Map API", "Twilo", "Weather API", "HTML", "CSS", "JavaScript", "Git", "Render", "Vercel"],
+    link: "https://github.com/KavinduKHM/Rebuild-Hub"
+  },
+  {
+    _id: "proj-003",
     slug: "sliit-gpa-calculator-for-all-specializations",
     image: "/photos/GPA.png",
     title: "SLIIT GPA Calculator",
@@ -20,7 +37,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/SLIIT-GPA-Calculator-For-All-Specializations"
   },
   {
-    _id: "proj-003",
+    _id: "proj-004",
     image: "/photos/Clinic.png",
     slug: "clinic-appointment-and-prescription-management-system",
     title: "Clinic Appointment & Prescription Management",
@@ -29,7 +46,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Clinic-Appointment-and-Prescription-Management-System"
   },
   {
-    _id: "proj-004",
+    _id: "proj-005",
     image: "/photos/chatbot.jpg",
     slug: "ai-chatbot-with-personalized-knowledgebase",
     title: "AI Chatbot with Personalized Knowledge Base",
@@ -38,7 +55,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/AI-Chatbot-With-Personalised-Knowledge-Base"
   },
   {
-    _id: "proj-005",
+    _id: "proj-006",
     slug: "real-time-white-board-sharing-app",
     image: "/photos/whiteboard.jpg",
     title: "Real-Time Whiteboard Sharing App",
@@ -47,7 +64,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Real-Time-White-Board-Sharing-App"
   },
   {
-    _id: "proj-006",
+    _id: "proj-007",
     slug: "personal-finance-tracker",
     image: "/photos/finance.png",
     title: "Personal Finance Tracker",
@@ -56,7 +73,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Personal-Finance-Tracker"
   },
   {
-    _id: "proj-007",
+    _id: "proj-008",
     slug: "online-school-information-management-system",
     image: "/photos/school.jpg",
     title: "Online School Information Management System",
@@ -65,7 +82,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Online-School-Information-Management-System"
   },
   {
-    _id: "proj-008",
+    _id: "proj-009",
     slug: "insurance-management-system",
     image: "/photos/insurance.jpg",
     title: "Insurance Management System",
@@ -74,7 +91,7 @@ export const projects = [
     link: "https://github.com/KavinduKHM/Health-First-Insurance"
     },
     {
-      _id: "proj-009",
+      _id: "proj-010",
       slug: "wedding-planning-mobile-app",
       image: "/photos/wedding.jpg",
       title: "Wedding Planning Mobile App",
@@ -83,7 +100,7 @@ export const projects = [
       link: "https://github.com/KavinduKHM/Wedding-Planning-Mobile-App"
     },
     {
-      _id: "proj-010",
+      _id: "proj-011",
       slug: "habit-tracker-mobile-app",
       image: "/photos/habbit.jpg",
       title: "Habit Tracker Mobile App",

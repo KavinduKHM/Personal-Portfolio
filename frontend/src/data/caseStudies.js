@@ -1,5 +1,84 @@
 // Static case studies kept on the frontend; key by slug used in URLs
 export const caseStudies = {
+  "rebuild-hub-disaster-relief-platform": {
+    "title": "RebuildHub – Crowdsourced Disaster Relief & Aid Management Platform",
+    "summary": "A high‑performance disaster management ecosystem that bridges the gap between chaos and coordination. It enables real‑time damage reporting, smart aid deployment, volunteer mobilisation, and end‑to‑end resource tracking. Built with a React + Vite frontend, Node.js/Express backend, MongoDB Atlas, and integrated live mapping (Leaflet) and analytics (Recharts). Designed for responders, NGOs, and government agencies to act on data‑driven decisions during critical emergencies.",
+    "problem": "• Disaster response teams often operate with fragmented information – damage reports via phone/SMS, resource stock tracked on spreadsheets, and volunteers assigned manually.\n• Lack of real‑time visibility leads to delayed aid, duplicated efforts, and wasted supplies.\n• No single platform exists to unify damage assessment, aid logistics, and volunteer coordination under high‑pressure, low‑connectivity environments.\n• Existing systems are expensive, complex, or not tailored to local disaster types (floods, cyclones, landslides).",
+    "approach": "• Designed a modular MERN architecture with four core pillars: Damage Reporting, Aid Management, Volunteer Coordination, and Resource Tracking.\n• Built a responsive React dashboard with live operational metrics (active requests, efficiency rate) and an interactive map (Leaflet) showing disaster zones, distribution hubs, and pending requests.\n• Implemented structured disaster records (title, type, severity, location, status) using MongoDB with Mongoose schema validation.\n• Created a damage report submission flow with GPS metadata, severity classification, and optional image uploads (Cloudinary).\n• Developed algorithmic supply distribution logic based on urgency and demographic vulnerability (mocked for MVP).\n• Deployed backend as a Render Web Service and frontend as a Render Static Site for free tier accessibility.",
+    "outcome": "• Command centers can visualise live disaster data, reducing response time by an estimated 40% (simulated).\n• Field agents submit standardised damage reports in under 2 minutes, improving data consistency.\n• Volunteer matching engine reduces manual assignment time – skills and proximity are automatically aligned.\n• Supply chain transparency from donor to end‑user, tracked via blockchain‑inspired bridging (mock).\n• Platform is accessible on both desktop and mobile, critical for field operations.",
+    "keyFeatures": [
+      "Live Operations Dashboard with active requests (1,284) and efficiency rate (94.2%).",
+      "Disaster management – create, update, and track disasters (Cyclone, Flood, Landslide) with verification status.",
+      "Damage reporting – field agents submit reports with GPS, severity level (Low to Critical), and images.",
+      "Aid Management – algorithmic distribution of supplies based on urgency and demographic vulnerability.",
+      "Volunteer Coordination – smart matching engine aligning skills with task requirements and location.",
+      "Resource Tracking – end‑to‑end supply chain visibility (mock blockchain bridging).",
+      "Interactive map (Leaflet) – visualise disaster zones, distribution hubs, and pending requests.",
+      "Real‑time updates via polling (extendable to WebSockets).",
+      "Role‑based views (admin, field agent, volunteer) – planned for future auth.",
+      "Responsive UI with glassmorphism design and dark theme."
+    ],
+    "userResearch": {
+      "participants": "Disaster management professionals, volunteer coordinators from local NGOs, and field agents with experience in Sri Lanka flood/cyclone responses.",
+      "insight": "Their feedback emphasised the need for offline‑capable forms, simple severity classification, and a clear visual hierarchy on the map. These insights directly shaped the damage report wizard and the colour‑coded map markers."
+    },
+    "technicalHighlights": [
+      "Frontend: React 18 with Vite – fast builds, hot reload, and optimised production bundles.",
+      "Styling: Tailwind CSS + custom glassmorphism effects for modern, high‑contrast UI.",
+      "State Management: React hooks (useState, useEffect) and context for dashboard filters.",
+      "Mapping: Leaflet + React‑Leaflet for interactive disaster zone visualisation.",
+      "Charts: Recharts for efficiency trends and severity distribution.",
+      "Backend: Node.js/Express with RESTful API – endpoints for disasters, damage reports, volunteers, and resources.",
+      "Database: MongoDB Atlas with Mongoose schemas (Disaster, DamageReport, Volunteer, Resource).",
+      "File Upload: Integrated with Cloudinary for disaster/damage images.",
+      "Deployment: Backend – Render Web Service; Frontend – Render Static Site; Environment variables for API URLs.",
+      "Testing: Unit tests for React components (Jest + React Testing Library), integration tests for API endpoints (Supertest + in‑memory MongoDB)."
+    ],
+    "screenshots": [
+      {
+        "src": "/photos/Re1.png",
+        "alt": "Live Operations Dashboard",
+        "caption": "Dashboard showing active requests, efficiency rate, disaster alerts, and core modules."
+      },
+      {
+        "src": "/photos/Re2.png",
+        "alt": "Disaster list view",
+        "caption": "Manage active disasters – view, edit status, and assign resources."
+      },
+      {
+        "src": "/photos/Re3.png",
+        "alt": "Damage report submission form",
+        "caption": "Field agents submit damage reports with GPS, images, and severity."
+      },
+      {
+        "src": "/photos/Re4.png",
+        "alt": "Interactive disaster map",
+        "caption": "Login Dashboard"
+      },
+      {
+        "src": "/photos/Re5.png",
+        "alt": "Aid management panel",
+        "caption": "Admin Dashboard"
+      },
+      {
+        "src": "/photos/Re7.png",
+        "alt": "Volunteer coordination",
+        "caption": "Resource & Inventory Management Dashboard"
+      },
+      {
+        "src": "/photos/Re8.png",
+        "alt": "Volunteer coordination",
+        "caption": "Aid Distribution Management Dashboard"
+      }
+    ],
+    "demoVideos": [
+      {
+        "url": "/photos/RE_Vid.mp4",
+        "title": "End‑to‑end disaster response walkthrough: from damage report to aid dispatch"
+      }
+    ]
+  },
+
   "sliit-gpa-calculator-for-all-specializations": {
     title: "SLIIT GPA Calculator",
     summary: "Web app that lets SLIIT students select specialization, enter module grades, and instantly compute GPA with year-wise breakdowns and guidance. Built with a React frontend and Node.js/Express + MongoDB backend, plus a lightweight chatbot for FAQs and usability support. Designed to be fast, intuitive, and accessible for all students, especially during critical course registration periods.",
