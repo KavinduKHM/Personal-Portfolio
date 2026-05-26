@@ -3,7 +3,21 @@ import { caseStudies } from "../data/caseStudies";
 
 export default function CaseStudy() {
   const { slug } = useParams();
-  const study = caseStudies?.[slug];
+
+  // Robust lookup: try exact key first, then fall back to a normalized key match
+  const normalize = s => (s || "").toString().toLowerCase().replace(/[^a-z0-9]/g, "");
+  let study = caseStudies?.[slug];
+  if (!study && caseStudies) {
+    const foundKey = Object.keys(caseStudies).find(k => normalize(k) === normalize(slug));
+    if (foundKey) {
+      // eslint-disable-next-line no-console
+      console.warn(`CaseStudy: fallback matched key '${foundKey}' for slug '${slug}'`);
+      study = caseStudies[foundKey];
+    } else {
+      // eslint-disable-next-line no-console
+      console.debug(`CaseStudy: no match for slug='${slug}'. Available keys=`, Object.keys(caseStudies));
+    }
+  }
 
   const renderWithBreaks = (text) => {
     if (!text) return null;

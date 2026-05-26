@@ -1,5 +1,96 @@
 // Static case studies kept on the frontend; key by slug used in URLs
 export const caseStudies = {
+  "elixra-smart-healthcare-platform": {
+    "title": "ELIXRA – AI‑Enabled Smart Healthcare Appointment & Telemedicine Platform",
+    "summary": "A cloud‑native, microservices healthcare ecosystem that digitises the entire patient journey – from symptom checking and doctor discovery to booking, video consultation, digital prescriptions, and medical records management. Built with Spring Boot microservices, Eureka service discovery, Docker, Kubernetes, and a React frontend. The platform integrates Agora for real‑time video, Google Gemini AI for preliminary symptom analysis, Cloudinary for document uploads, Stripe/PayHere for payments, and Twilio/SendGrid for notifications. It serves patients, doctors, and administrators with role‑based access and JWT authentication, providing a scalable, secure, and portable telemedicine solution.",
+    "problem": "• Traditional healthcare systems suffer from fragmented patient data, long waiting times for appointments, and limited access to specialists, especially in remote areas.\n• Patients struggle to find the right doctor by specialty, leading to mismatched consultations and wasted time.\n• Doctors lack efficient tools to manage schedules, issue digital prescriptions, and conduct secure video consultations.\n• Medical reports and prescriptions are often paper‑based or stored in isolated systems, making continuity of care difficult.\n• Administrators have no centralised dashboard to verify doctor registrations, monitor platform operations, or access analytics.\n• Existing telemedicine platforms are either expensive, lack modularity, or are not designed for cloud‑native scalability.",
+    "approach": "• Adopted a microservices architecture with separate services for auth, patient, doctor, appointment, telemedicine, payment, notification, and AI symptom checker, each with its own MySQL database.\n• Implemented service discovery (Netflix Eureka) and API Gateway (Spring Cloud Gateway) to decouple service communication and provide a single entry point.\n• Built RESTful APIs for each service with comprehensive validation, error handling, and OpenAPI documentation.\n• Integrated Agora.io SDK for secure, low‑latency video consultations, generating dynamic tokens per session.\n• Leveraged Google Gemini AI to analyse free‑text symptoms, return possible conditions, urgency levels, and recommended specialties – then automatically queried the appointment service for matching doctors.\n• Used Cloudinary for storing patient‑uploaded medical documents and profile pictures, with secure URLs.\n• Integrated Stripe (sandbox) for mock payment processing of consultation fees.\n• Set up email (SendGrid) and SMS (Twilio) notifications for appointment confirmations and reminders.\n• Containerised all services with Docker and orchestrated them using Kubernetes (Minikube) to demonstrate cloud‑native readiness.\n• Developed a responsive React frontend with Axios for asynchronous API calls, role‑based views (patient, doctor, admin), and Agora Web SDK for video calls.\n• Secured the system with JWT‑based authentication, role‑based access control (Patient, Doctor, Admin), and propagated tokens via Feign interceptors.",
+    "outcome": "• Patients can register, browse doctors by specialty, book appointments in real‑time, attend video consultations, upload medical documents, and view prescriptions – all from a single dashboard.\n• Doctors manage profiles, set availability, accept/reject appointments, conduct telemedicine sessions, issue digital prescriptions, and access patient documents.\n• Administrators have a unified panel to verify doctor registrations, manage user accounts, and monitor platform operations (future enhancement).\n• AI symptom checker provides preliminary health suggestions and recommended specialties, reducing guesswork for patients and improving first‑visit relevance.\n• Notifications (email/SMS) keep both patients and doctors informed about booking status, reminders, and consultation links.\n• The platform is fully containerised and can be deployed on any Kubernetes cluster, ensuring portability and scalability.\n• Inter‑service communication via Feign clients with fallbacks ensures resilience when a service is temporarily unavailable.\n• Separate databases per service prevent coupling and allow independent scaling and technology evolution.",
+    "keyFeatures": [
+      "Patient registration, profile management, medical document upload (Cloudinary), prescription history.",
+      "Doctor search by specialty and name, with available time slots.",
+      "Appointment booking, rescheduling, cancellation, and real‑time status tracking (Pending/Confirmed/Completed/Cancelled).",
+      "Video consultation using Agora SDK – one‑click join with secure token generation.",
+      "AI Symptom Checker (Google Gemini) – input symptoms, receive analysis, possible conditions, urgency, and recommended doctor specialty, then display matching doctors.",
+      "Digital prescription issuance by doctors, with medication details, dosage, frequency, and duration.",
+      "Role‑based access control (Patient, Doctor, Admin) with JWT authentication.",
+      "Email (SendGrid) and SMS (Twilio) notifications for appointment confirmations, reminders, and cancellation.",
+      "Admin panel for doctor verification and user management (planned/in progress).",
+      "Payment integration (Stripe sandbox) for consultation fees.",
+      "Eureka service discovery dashboard for monitoring registered services.",
+      "Docker Compose for local development and Kubernetes manifests for production‑like orchestration."
+    ],
+    "userResearch": {
+      "participants": "Interviews were conducted with 5 general practitioners, 10 patients (including elderly and remote area residents), and 2 healthcare IT administrators from private clinics in Sri Lanka.",
+      "insight": "Patients expressed frustration with long waiting times and difficulty finding specialists; they valued instant video consultations and the ability to upload previous reports. Doctors requested a simple calendar view, the ability to issue digital prescriptions quickly, and secure video tools. Administrators emphasised the need for centralised doctor verification and operational analytics. These insights directly shaped the appointment booking flow, the doctor availability module, and the admin verification workflow."
+    },
+    "technicalHighlights": [
+      "Microservices: 9 independent Spring Boot services (auth, patient, doctor, appointment, telemedicine, payment, notification, ai‑symptom‑checker, plus infrastructure: service‑discovery, api‑gateway).",
+      "Service Discovery & Load Balancing: Netflix Eureka with Spring Cloud LoadBalancer.",
+      "API Gateway: Spring Cloud Gateway for routing, authentication forwarding, and circuit breaking.",
+      "Inter‑service Communication: OpenFeign clients with fallbacks for resilience.",
+      "Database per service: MySQL 8.0 containers, each with its own schema, using JPA/Hibernate with `ddl-auto=update`.",
+      "Authentication & Authorisation: JWT with Spring Security, role‑based endpoints (`@PreAuthorize`).",
+      "Video Integration: Agora.io – server‑side token generation using `RtcTokenBuilder`, client‑side Agora Web SDK.",
+      "AI Integration: Google Gemini API – prompt engineering to return structured JSON, fallback analysis if API fails.",
+      "File Storage: Cloudinary for medical documents and profile pictures; REST endpoints for upload, update, delete.",
+      "Notifications: Spring Mail (SMTP) for emails, Twilio for SMS (WhatsApp fallback).",
+      "Payments: Stripe sandbox for mock transaction processing.",
+      "Containerisation: Docker images for each service, Docker Compose for local development.",
+      "Orchestration: Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets, Ingress, HPA) – tested on Minikube.",
+      "Frontend: React 18 with Vite, Axios for API calls, Agora Web SDK, context for auth state, Tailwind CSS for styling.",
+      "Testing: Unit tests for service layers, integration tests using Testcontainers, Postman collections for API validation."
+    ],
+    // "screenshots": [
+    //   {
+    //     "src": "/screenshots/elixra-patient-dashboard.png",
+    //     "alt": "Patient Dashboard",
+    //     "caption": "Patient dashboard showing upcoming appointments, recent prescriptions, and document uploads."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-doctor-schedule.png",
+    //     "alt": "Doctor availability calendar",
+    //     "caption": "Doctor view – set weekly availability, manage appointments, and start video calls."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-appointment-booking.png",
+    //     "alt": "Appointment booking flow",
+    //     "caption": "Search doctors by specialty, select time slot, and confirm booking."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-video-consultation.png",
+    //     "alt": "Video consultation screen",
+    //     "caption": "Agora‑based video call interface with mute, camera, and end call controls."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-ai-symptom-checker.png",
+    //     "alt": "AI Symptom Checker",
+    //     "caption": "Patients input symptoms, receive analysis and recommended specialty, plus list of matching doctors."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-eureka-dashboard.png",
+    //     "alt": "Eureka service discovery dashboard",
+    //     "caption": "All microservices registered in Eureka with status UP."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-kubernetes-pods.png",
+    //     "alt": "Kubernetes pods running",
+    //     "caption": "All services deployed as pods in Minikube cluster."
+    //   },
+    //   {
+    //     "src": "/screenshots/elixra-postman-collection.png",
+    //     "alt": "Postman API tests",
+    //     "caption": "Comprehensive API testing collection for all endpoints."
+    //   }
+    // ],
+    "demoVideos": [
+      {
+        "url": "/photos/Group 4.mp4",
+        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription"
+      }
+    ]
+  },
+
   "rebuild-hub-disaster-relief-platform": {
     "title": "RebuildHub – Crowdsourced Disaster Relief & Aid Management Platform",
     "summary": "A high‑performance disaster management ecosystem that bridges the gap between chaos and coordination. It enables real‑time damage reporting, smart aid deployment, volunteer mobilisation, and end‑to‑end resource tracking. Built with a React + Vite frontend, Node.js/Express backend, MongoDB Atlas, and integrated live mapping (Leaflet) and analytics (Recharts). Designed for responders, NGOs, and government agencies to act on data‑driven decisions during critical emergencies.",
@@ -73,7 +164,7 @@ export const caseStudies = {
     ],
     "demoVideos": [
       {
-        "url": "/photos/RE_Vid.mp4",
+        "url": "/photos/RE_New.mp4",
         "title": "End‑to‑end disaster response walkthrough: from damage report to aid dispatch"
       }
     ]

@@ -3,8 +3,8 @@ export const projects = [
   
   {
     _id: "proj-001",
-    slug: "ELIXRA - Smart Healthcare Platform",
-    "image": "/photos/ELIXRA-Healthcare.png",
+    slug: "elixra-smart-healthcare-platform",
+    "image": "/photos/elixra2.png",
     "title": "ELIXRA - AI-Enabled Smart Healthcare Appointment & Telemedicine Platform",
     "description": "Cloud-native microservices healthcare platform enabling patients to book appointments, attend video consultations, upload medical reports, view prescriptions, and receive AI-powered symptom analysis. Doctors manage profiles, availability, conduct telemedicine sessions, and issue digital prescriptions. Implements service discovery (Eureka), API Gateway, JWT authentication, role-based access (Patient, Doctor, Admin). Integrates Agora for video, Cloudinary for document storage, Stripe/PayHere for payments, Twilio/SendGrid for notifications, and Google Gemini AI for symptom checker. Fully containerized with Docker and orchestrated on Kubernetes. Includes separate MySQL databases per service, Feign clients for inter-service communication, and comprehensive REST APIs.",
     "technologies": [
