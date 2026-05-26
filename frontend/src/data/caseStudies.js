@@ -85,8 +85,16 @@ export const caseStudies = {
     // ],
     "demoVideos": [
       {
-        "url": "/photos/Group 4.mp4",
-        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription"
+        "url": "/photos/elixra1.mp4",
+        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 1" 
+      },
+      {
+        "url": "/photos/elixra2.mp4",
+        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 2"
+      },
+      {
+        "url": "/photos/elixra3.mp4",
+        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 3"
       }
     ]
   },
