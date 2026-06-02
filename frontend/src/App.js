@@ -6,6 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CaseStudy from "./components/CaseStudy";
+import Resume from "./components/Resume";
 
 function AppShell() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function AppShell() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug/case-study" element={<CaseStudy />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
