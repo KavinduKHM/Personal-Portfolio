@@ -46,7 +46,7 @@ export default function Home() {
 
               <div className="hero-actions">
                 <Link to="/contact" className="hero-btn hero-btn-primary">
-                  Let's get started <span aria-hidden="true">→</span>
+                  Let's get started <span className="cta-arrow" aria-hidden="true">→</span>
                 </Link>
                 <Link to="/projects" className="hero-btn hero-btn-secondary">
                   View Projects
