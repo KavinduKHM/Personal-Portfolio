@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -26,10 +27,21 @@ export default function Home() {
               </p>
 
               <div className="hero-pills" aria-label="Primary technologies">
-                <span className="hero-pill">REACT</span>
-                <span className="hero-pill">TYPESCRIPT</span>
-                <span className="hero-pill">NODE.JS</span>
-                <span className="hero-pill">PYTHON</span>
+                <span className="hero-pill">JAVA</span>
+                <span className="hero-pill">React.js</span>
+                <span className="hero-pill">Node.js</span>
+                <span className="hero-pill">Next.js</span>
+                <span className="hero-pill">Express.js</span>
+                <span className="hero-pill">Kotlin</span>
+                <span className="hero-pill">PHP</span>
+                <span className="hero-pill">SQL</span>
+                <span className="hero-pill">MongoDB</span>
+                <span className="hero-pill">DOCKER</span>
+                <span className="hero-pill">Kubernetes</span>
+                <span className="hero-pill">MERN</span>
+                <span className="hero-pill">Springboot</span>
+                <span className="hero-pill">Git</span>
+                <span className="hero-pill">Figma</span>
               </div>
 
               <div className="hero-actions">
@@ -45,16 +57,101 @@ export default function Home() {
             <div className="hero-right">
               <div className="hero-avatar-group">
                 <div className="hero-avatar-glow" aria-hidden="true" />
+
+                <div className="avatar-rotor" aria-hidden>
+                  <svg
+                    className="rotor-svg"
+                    viewBox="0 0 520 520"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <defs>
+                      <path
+                        id="ringPath"
+                        d="M260,20 a240,240 0 1,1 0,480 a240,240 0 1,1 0,-480"
+                        fill="none"
+                      />
+                    </defs>
+
+                    <text fontFamily="JetBrains Mono, Inter, sans-serif" fontWeight="700" fontSize="20" textAnchor="middle">
+                      <textPath xlinkHref="#ringPath" startOffset="25%">
+                        • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK
+                      </textPath>
+                    </text>
+                  </svg>
+
+                  <span className="rotor-streak streak1" aria-hidden />
+                  <span className="rotor-streak streak2" aria-hidden />
+                  <span className="rotor-streak streak3" aria-hidden />
+                </div>
+
                 <div className="hero-avatar">
                   <img src="/photos/My2.JPG" alt="Kavindu Hewamaddumage" />
                 </div>
+
+                
+
+                
+                  
+                
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      
+      {/* Marquee tech ticker — match About page marquee and pull up by 40px
+      <div className="container marquee" style={{ marginTop: -90 }}>
+        <div className="marquee-track" role="list">
+          {[
+            "React.js",
+            "Node.js",
+            "TypeScript",
+            "Next.js",
+            "MongoDB",
+            "Tailwind CSS",
+            "Express.js",
+            "Java",
+            "Kotlin",
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "SpringBoot",
+            "PHP",
+            "SQL",
+            "Git",
+            "Figma",
+            "Postman",
+          ]
+            .concat([
+              "React.js",
+              "Node.js",
+              "TypeScript",
+              "Next.js",
+              "MongoDB",
+              "Tailwind CSS",
+              "Express.js",
+              "Java",
+              "Kotlin",
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "SpringBoot",
+              "PHP",
+              "SQL",
+              "Git",
+              "Figma",
+              "Postman",
+            ])
+            .map((item, idx) => (
+              <div key={`${item}-${idx}`} className="marquee-item" role="listitem">
+                {item} <span className="marquee-sep" aria-hidden>✦</span>
+              </div>
+            ))}
+        </div>
+      </div> */}
 
       <footer className="site-footer">
         <div className="container footer-inner">
