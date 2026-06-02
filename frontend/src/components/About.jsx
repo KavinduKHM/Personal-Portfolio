@@ -25,7 +25,7 @@ export default function About() {
       <div className="container about-hero">
         <div className="hero-grid">
           <div className="hero-left">
-            <div className="hero-eyebrow"><span style={{width:8,height:8,background:'var(--accent)',borderRadius:8,display:'inline-block',boxShadow:'0 0 10px var(--accent)'}}></span><span>01 / Introduction</span></div>
+            <div className="hero-eyebrow"><span style={{width:8,height:8,background:'var(--accent)',borderRadius:8,display:'inline-block',boxShadow:'0 0 10px var(--accent)'}}></span><span>Introduction</span></div>
             <div className="glass glass-strong" style={{padding:14,display:'inline-block',marginTop:12}}>Available for opportunities</div>
             <motion.h1 className="hero-title" initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: "easeOut" }}>About <span className="accent">Me.</span></motion.h1>
             <p className="hero-lede">Software Engineering undergraduate with a strong academic foundation and a passion for building efficient, scalable applications. Continuously learning and adapting to new technologies while applying theoretical concepts through practical projects. A collaborative team player focused on delivering quality solutions and growing as a professional software developer.</p>
@@ -37,16 +37,27 @@ export default function About() {
           </div>
 
           <div className="hero-portrait">
-            <motion.div className="portrait-card glass-strong" whileHover={{ scale: 1.02 }} transition={{ type: 'spring', stiffness: 120 }}>
+            <motion.div className="portrait-card glass-strong" whileHover={{ scale: 1.02 }} transition={{ type: 'spring', stiffness: 120}}>
               <div className="portrait-inner">
                 <img src="/photos/My2.JPG" alt="Profile" style={{width:'100%',display:'block',height: '100%', objectFit:'cover'}} />
               </div>
               <div className="portrait-overlay glass" style={{background:'linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))'}}>
-                <div style={{display:'flex',alignItems:'center',gap:8}}><strong style={{fontSize:12,fontFamily:'JetBrains Mono'}}>ENGINEER</strong><span style={{fontStyle:'italic',fontFamily:'Fraunces'}}>Full-stack</span></div>
+                <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{fontStyle:'italic',fontFamily:'Fraunces'}}>Full-Stack Developer</span></div>
                 <div style={{fontFamily:'JetBrains Mono',fontSize:12,color:'var(--muted)'}}>Open to work</div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </div>
+      
+      <div className="container marquee" style={{marginTop:-10}}>
+        <div className="marquee-track" aria-hidden>
+          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
+            <div key={i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
+          ))}
+          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
+            <div key={'b'+i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
+          ))}
         </div>
       </div>
 
@@ -59,16 +70,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="container marquee" style={{marginTop:22}}>
-        <div className="marquee-track" aria-hidden>
-          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
-            <div key={i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
-          ))}
-          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
-            <div key={'b'+i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
-          ))}
-        </div>
-      </div>
+      
 
       <div className="container" style={{marginTop:28}}>
         <h3 className="skills-title">Skills <span style={{fontStyle:'italic',fontFamily:'Fraunces',background:'linear-gradient(90deg,var(--accent),var(--accent-2))',WebkitBackgroundClip:'text',color:'transparent'}}>crafted</span> over time.</h3>
@@ -122,7 +124,7 @@ export default function About() {
       <div className="container" style={{marginTop:32, marginBottom:64}}>
         <div className="glass-strong cta-panel">
           <div>
-            <div style={{fontFamily:'JetBrains Mono'}}>04 / Get in touch</div>
+            <div style={{fontFamily:'JetBrains Mono'}}>Get in touch</div>
             <h2 style={{fontFamily:'Fraunces',fontSize:32}}>Let's build <span style={{fontStyle:'italic', background:'linear-gradient(90deg,var(--accent),var(--accent-2))', WebkitBackgroundClip:'text', color:'transparent'}}>something</span> together.</h2>
             <p style={{color:'var(--muted)'}}>Always open to interesting conversations, opportunities, and collaborations.</p>
           </div>

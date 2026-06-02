@@ -102,30 +102,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Marquee tech ticker — match About page marquee and pull up by 40px
-      <div className="container marquee" style={{ marginTop: -90 }}>
-        <div className="marquee-track" role="list">
-          {[
-            "React.js",
-            "Node.js",
-            "TypeScript",
-            "Next.js",
-            "MongoDB",
-            "Tailwind CSS",
-            "Express.js",
-            "Java",
-            "Kotlin",
-            "Docker",
-            "Kubernetes",
-            "AWS",
-            "SpringBoot",
-            "PHP",
-            "SQL",
-            "Git",
-            "Figma",
-            "Postman",
-          ]
-            .concat([
+      {/* Marquee tech ticker (full-width)
+      <section className="marquee-full" aria-label="Technology ticker">
+        <div className="marquee-inner">
+          <div className="marquee-track" role="list">
+            {[
               "React.js",
               "Node.js",
               "TypeScript",
@@ -144,14 +125,42 @@ export default function Home() {
               "Git",
               "Figma",
               "Postman",
-            ])
-            .map((item, idx) => (
-              <div key={`${item}-${idx}`} className="marquee-item" role="listitem">
-                {item} <span className="marquee-sep" aria-hidden>✦</span>
-              </div>
-            ))}
-        </div>
-      </div> */}
+            ]
+              .concat([
+                "React.js",
+                "Node.js",
+                "TypeScript",
+                "Next.js",
+                "MongoDB",
+                "Tailwind CSS",
+                "Express.js",
+                "Java",
+                "Kotlin",
+                "Docker",
+                "Kubernetes",
+                "AWS",
+                "SpringBoot",
+                "PHP",
+                "SQL",
+                "Git",
+                "Figma",
+                "Postman",
+              ])
+              .map((item, idx) => (
+                <div key={`${item}-${idx}`} className="marquee-item" role="listitem">
+                  <span className="marquee-text">{item}</span>
+                  {idx % 1 === 0 && (
+                    <span className="marquee-sep" aria-hidden>
+                      ✦
+                    </span>
+                  )}
+                </div>
+              ))}
+          </div>
+          <div className="marquee-mask left" aria-hidden />
+          <div className="marquee-mask right" aria-hidden />
+        </div> */}
+      {/* </section> */}
 
       <footer className="site-footer">
         <div className="container footer-inner">

@@ -1,52 +1,57 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "../styles/styles.css";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [time, setTime] = useState(() => {
+    const d = new Date();
+    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  });
 
-  const toggleMenu = () => setOpen(o => !o);
-  const closeMenu = () => setOpen(false);
+  useEffect(() => {
+    const id = setInterval(() => {
+      const d = new Date();
+      setTime(d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    }, 60_000);
+    return () => clearInterval(id);
+  }, []);
 
-  const navLinkClass = ({ isActive }) => (isActive ? "active" : undefined);
+  const links = [
+    { to: '/', label: 'Home', end: true },
+    { to: '/about', label: 'About' },
+    { to: '/projects', label: 'Projects' },
+    { to: '/resume', label: 'Resume' },
+    { to: '/contact', label: 'Contact' },
+  ];
 
   return (
     <header className="navbar">
-      <NavLink to="/" end className="logo" onClick={closeMenu} aria-label="Home">
-        KH
-      </NavLink>
+      <div className="navbar-container glass">
+        <div className="nav-left">
+          <div className="logo-circle" aria-hidden>
+            <span className="logo-text">KH</span>
+          </div>
+        </div>
 
-      <button
-        className="navbar-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        onClick={toggleMenu}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div className={open ? "navbar-right open" : "navbar-right"}>
-        <nav className="navbar-links" aria-label="Primary">
-          <NavLink to="/" end onClick={closeMenu} className={navLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/about" onClick={closeMenu} className={navLinkClass}>
-            About
-          </NavLink>
-          <NavLink to="/projects" onClick={closeMenu} className={navLinkClass}>
-            Projects
-          </NavLink>
-          <NavLink to="/resume" onClick={closeMenu} className={navLinkClass}>
-            Resume
-          </NavLink>
-          <NavLink to="/contact" onClick={closeMenu} className={navLinkClass}>
-            Contact
-          </NavLink>
+        <nav className="nav-center" aria-label="Primary navigation">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} end={l.end} className="nav-link">
+              {({ isActive }) => (
+                <span className="nav-link-inner">
+                  {isActive && (
+                    <motion.span layoutId="activeNavPill" className="nav-active-pill" />
+                  )}
+                  <span className={isActive ? 'nav-link-text active' : 'nav-link-text'}>{l.label}</span>
+                </span>
+              )}
+            </NavLink>
+          ))}
         </nav>
 
-        
+        <div className="nav-right">
+          <a href="/contact" className="talk-btn">Let's talk ↗</a>
+        </div>
       </div>
     </header>
   );
