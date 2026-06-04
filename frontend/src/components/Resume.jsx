@@ -45,7 +45,7 @@ export default function Resume() {
   return (
     <section className="page resume-page">
       <div className="container">
-        <div className="page-grid" style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: "32px" }}>
+        <div className="page-grid resume-grid">
           <main>
             <h2>Resume</h2>
 
@@ -81,7 +81,7 @@ export default function Resume() {
               <p style={{ color: "var(--text-light)", marginBottom: 16 }}>
                 Click to open or download the PDF version of my CV. The CV includes detailed information about my education, skills, certifications, and experience.
               </p>
-              <div style={{ display: "flex", gap: 12 }}>
+              <div className="resume-cv-btns">
                 <a href="/photos/resume.pdf" target="_blank" rel="noreferrer" className="hero-btn hero-btn-secondary" style={{ textDecoration: "none" }}>
                   View CV
                 </a>
