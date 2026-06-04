@@ -3450,6 +3450,11 @@ svg {
     border-radius: 24px;
     max-height: calc(100vh - 84px);
     overflow: auto;
+    pointer-events: auto;
+  }
+
+  .mobile-drawer * {
+    pointer-events: auto;
   }
 
   .mobile-nav-link,
@@ -3529,6 +3534,15 @@ svg {
     max-width: none;
   }
 
+  .hero-left {
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    margin-bottom: 8px;
+  }
+
   .hero-title,
   .contact-hero h1,
   .case-study-hero h1 {
@@ -3571,19 +3585,19 @@ svg {
   }
 
   .hero-avatar-group {
-    width: min(100%, 320px);
-    height: min(100vw, 320px);
+    width: min(90vw, 320px);
+    height: min(90vw, 320px);
     margin: 0 auto;
   }
 
   .hero-avatar {
-    width: min(72vw, 250px);
-    height: min(72vw, 250px);
+    width: min(56vw, 190px);
+    height: min(56vw, 190px);
   }
 
   .avatar-rotor {
-    width: min(100vw, 360px);
-    height: min(100vw, 360px);
+    width: min(88vw, 320px);
+    height: min(88vw, 320px);
   }
 
   .rotor-svg text,
@@ -3592,6 +3606,14 @@ svg {
   .footer-copy,
   .footer-links a {
     font-size: 12px;
+  }
+
+  .rotor-svg text {
+    letter-spacing: 3px;
+  }
+
+  .rotor-streak {
+    display: none;
   }
 
   .hero-blob-1 {
@@ -3737,22 +3759,27 @@ svg {
   }
 
   .hero-avatar-group {
-    width: min(100%, 280px);
-    height: min(100vw, 280px);
+    width: min(88vw, 290px);
+    height: min(88vw, 290px);
   }
 
   .hero-avatar {
-    width: 220px;
-    height: 220px;
+    width: 176px;
+    height: 176px;
   }
 
   .avatar-rotor {
-    width: 300px;
-    height: 300px;
+    width: min(86vw, 290px);
+    height: min(86vw, 290px);
   }
 
   .rotor-svg text {
-    font-size: 16px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .rotor-streak {
+    display: none;
   }
 
   .hero-pills {
