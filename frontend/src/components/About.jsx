@@ -50,16 +50,7 @@ export default function About() {
         </div>
       </div>
       
-      <div className="container marquee" style={{marginTop:-10}}>
-        <div className="marquee-track" aria-hidden>
-          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
-            <div key={i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
-          ))}
-          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
-            <div key={'b'+i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
-          ))}
-        </div>
-      </div>
+      
 
       <div className="container" style={{marginTop:28}}>
         <div className="glass-strong stats-strip">
@@ -70,6 +61,16 @@ export default function About() {
         </div>
       </div>
 
+        <div className="container marquee" style={{marginTop:35}}>
+        <div className="marquee-track" aria-hidden>
+          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
+            <div key={i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
+          ))}
+          {['React.js','Node.js','TypeScript','Next.js','MongoDB','Tailwind CSS','Express.js','Java','Kotlin','Docker','Kubernetes','AWS','SpringBoot','PHP','SQL','Git','Figma','Postman'].map((t,i)=> (
+            <div key={'b'+i} className="marquee-item">{t} <span style={{color:'var(--accent)'}}>✦</span></div>
+          ))}
+        </div>
+      </div>
       
 
       <div className="container" style={{marginTop:28}}>
