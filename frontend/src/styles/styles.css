@@ -3484,6 +3484,67 @@ svg {
     color: var(--accent);
   }
 
+  .page-container {
+    padding-top: 104px;
+    background: transparent;
+  }
+
+  .about-page,
+  .projects-section {
+    position: relative;
+    background: transparent;
+  }
+
+  .hero,
+  .page,
+  .contact-section,
+  .case-study-page,
+  .resume-page {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(34, 211, 153, 0.08), rgba(6, 182, 212, 0.05) 16%, rgba(5, 8, 16, 0) 44%),
+      radial-gradient(circle at 50% 0%, rgba(34, 211, 153, 0.08), transparent 42%),
+      linear-gradient(180deg, rgba(5, 8, 16, 0.98), rgba(5, 8, 16, 0.94));
+  }
+
+  .hero::before,
+  .page::before,
+  .about-page::before,
+  .projects-section::before,
+  .contact-section::before,
+  .case-study-page::before,
+  .resume-page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 140px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(34, 211, 153, 0.16), rgba(6, 182, 212, 0.10), rgba(5, 8, 16, 0));
+    opacity: 0.95;
+    z-index: 0;
+  }
+
+  .hero > *,
+  .page > *,
+  .contact-section > *,
+  .case-study-page > *,
+  .resume-page > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-page::before,
+  .projects-section::before {
+    display: none;
+  }
+
+  .about-hero,
+  .projects-hero {
+    margin-top: 24px;
+  }
+
   .hero,
   .about-hero,
   .projects-hero,
@@ -3585,19 +3646,30 @@ svg {
   }
 
   .hero-avatar-group {
-    width: min(90vw, 320px);
-    height: min(90vw, 320px);
+    width: min(92vw, 340px);
+    height: min(92vw, 340px);
     margin: 0 auto;
   }
 
   .hero-avatar {
-    width: min(56vw, 190px);
-    height: min(56vw, 190px);
+    width: min(62vw, 215px);
+    height: min(62vw, 215px);
+    border-width: 10px;
+    box-shadow: 0 0 0 5px rgba(34, 211, 153, 0.08) inset;
+  }
+
+  .hero-avatar-glow {
+    width: min(74vw, 265px);
+    height: min(74vw, 265px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.28;
+    filter: blur(22px);
   }
 
   .avatar-rotor {
-    width: min(88vw, 320px);
-    height: min(88vw, 320px);
+    display: none;
   }
 
   .rotor-svg text,
@@ -3730,7 +3802,7 @@ svg {
   }
 
   .page {
-    padding-top: 32px;
+    padding-top: 40px;
     padding-bottom: 32px;
   }
 
@@ -3741,6 +3813,32 @@ svg {
   .case-study-page {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .page-container {
+    padding-top: 108px;
+    background: transparent;
+  }
+
+  .about-page,
+  .projects-section {
+    background: transparent;
+  }
+
+  .hero,
+  .page,
+  .contact-section,
+  .case-study-page,
+  .resume-page {
+    background:
+      linear-gradient(180deg, rgba(34, 211, 153, 0.10), rgba(6, 182, 212, 0.06) 16%, rgba(5, 8, 16, 0) 44%),
+      radial-gradient(circle at 50% 0%, rgba(34, 211, 153, 0.08), transparent 42%),
+      linear-gradient(180deg, rgba(5, 8, 16, 0.985), rgba(5, 8, 16, 0.95));
+  }
+
+  .about-page::before,
+  .projects-section::before {
+    display: none;
   }
 
   .stats-strip {
@@ -3759,23 +3857,34 @@ svg {
   }
 
   .hero-avatar-group {
-    width: min(88vw, 290px);
-    height: min(88vw, 290px);
+    width: min(92vw, 320px);
+    height: min(92vw, 320px);
   }
 
   .hero-avatar {
-    width: 176px;
-    height: 176px;
+    width: min(68vw, 235px);
+    height: min(68vw, 235px);
+    border-width: 10px;
+    box-shadow: 0 0 0 5px rgba(34, 211, 153, 0.08) inset;
+  }
+
+  .hero-avatar-glow {
+    width: min(80vw, 286px);
+    height: min(80vw, 286px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.26;
+    filter: blur(22px);
   }
 
   .avatar-rotor {
-    width: min(86vw, 290px);
-    height: min(86vw, 290px);
+    display: none;
   }
 
   .rotor-svg text {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 12px;
+    letter-spacing: 3px;
   }
 
   .rotor-streak {

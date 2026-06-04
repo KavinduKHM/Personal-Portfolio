@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const rotorText = '• OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK';
+
   return (
     <>
       <section id="home" className="hero hero-gradient">
@@ -76,8 +78,8 @@ export default function Home() {
                     </defs>
 
                     <text fontFamily="JetBrains Mono, Inter, sans-serif" fontWeight="700" fontSize="20" textAnchor="middle">
-                      <textPath xlinkHref="#ringPath" startOffset="25%">
-                        • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK
+                      <textPath xlinkHref="#ringPath" startOffset="0%">
+                        {rotorText}
                       </textPath>
                     </text>
                   </svg>
