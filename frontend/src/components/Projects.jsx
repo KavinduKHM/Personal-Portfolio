@@ -74,8 +74,10 @@ export default function Projects() {
       </div>
 
       <div className="container" style={{ marginTop: 28 }}>
-        <div className="projects-grid">
-          {visible.map(project => {
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+          {visible.map((project, index) => {
+            const isLeft = index % 2 === 0;
             const techList = Array.isArray(project.technologies) ? project.technologies : (project.technologies ? [project.technologies] : []);
             const slug = project.slug || slugify(project.title || project._id);
 
@@ -92,51 +94,63 @@ export default function Projects() {
               .join('');
 
             return (
-              <motion.article
-                layout
-                className="card project-card"
+              <motion.div
                 key={project._id || slug}
+                className={`timeline-item ${isLeft ? 'left' : 'right'}`}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 50 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
               >
-                <div className="project-media">
-                  {imgSrc ? (
-                    <img src={imgSrc} alt={imgAlt} className="project-image" />
-                  ) : (
-                    <div className="project-placeholder"><span className="initials">{initials}</span></div>
-                  )}
-                  <div className="project-media-overlay" />
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <article className="card project-card">
+                    <div className="project-media">
+                      {imgSrc ? (
+                        <img
+                          src={imgSrc}
+                          alt={imgAlt}
+                          className="project-image"
+                          style={project.title && project.title.toLowerCase().includes("rebuild") ? { objectFit: 'contain', padding: '24px', backgroundColor: 'var(--bg-2)' } : {}}
+                        />
+                      ) : (
+                        <div className="project-placeholder"><span className="initials">{initials}</span></div>
+                      )}
+                      <div className="project-media-overlay" />
+                    </div>
+
+                    <div className="project-body">
+                      <div className="project-tags">
+                        {techList.slice(0, 3).map(t => <span key={t} className="project-tag">{t}</span>)}
+                      </div>
+
+                      <h3 className="project-title">{project.title}</h3>
+
+                      <p className="project-excerpt">{project.description}</p>
+
+                      <div className="project-actions">
+                        {project.link ? (
+                          <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                            <span>View Code</span>
+                            <svg className="action-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                          </a>
+                        ) : (
+                          <span className="project-link disabled">No live link</span>
+                        )}
+                        <Link className="case-study-link" to={`/projects/${slug}/case-study`}>
+                          <span>Case Study</span>
+                          <svg className="action-icon arrow-right" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
                 </div>
-
-                <div className="project-body">
-                  <div className="project-tags">
-                    {techList.slice(0, 3).map(t => <span key={t} className="project-tag">{t}</span>)}
-                  </div>
-
-                  <h3 className="project-title">{project.title}</h3>
-
-                  <p className="project-excerpt">{project.description}</p>
-
-                  <div className="project-actions">
-                    {project.link ? (
-                      <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-                        <span>View Live</span>
-                        <svg className="action-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="7" y1="17" x2="17" y2="7"></line>
-                          <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                      </a>
-                    ) : (
-                      <span className="project-link disabled">No live link</span>
-                    )}
-                    <Link className="case-study-link" to={`/projects/${slug}/case-study`}>
-                      <span>Case Study</span>
-                      <svg className="action-icon arrow-right" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </motion.article>
+              </motion.div>
             );
           })}
         </div>

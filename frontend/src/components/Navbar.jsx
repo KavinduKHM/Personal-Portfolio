@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import "../styles/styles.css";
 
 export default function Navbar() {
@@ -30,29 +30,53 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar-container glass">
         <div className="nav-left">
-          <div className="logo-circle" aria-hidden>
-            <span className="logo-text">KH</span>
-          </div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <div className="logo-circle" aria-hidden>
+              <span className="logo-text">KH</span>
+            </div>
+          </Link>
         </div>
 
         {/* Desktop nav */}
         <nav className="nav-center nav-desktop" aria-label="Primary navigation">
-          {links.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.end} className="nav-link">
-              {({ isActive }) => (
-                <span className="nav-link-inner">
-                  {isActive && (
-                    <motion.span layoutId="activeNavPill" className="nav-active-pill" />
-                  )}
-                  <span className={isActive ? 'nav-link-text active' : 'nav-link-text'}>{l.label}</span>
-                </span>
-              )}
-            </NavLink>
-          ))}
+          <LayoutGroup>
+            {links.map((l) => (
+              <NavLink key={l.to} to={l.to} end={l.end} className="nav-link">
+                {({ isActive }) => (
+                  <span className="nav-link-inner">
+                    {isActive && (
+                      <motion.span layout layoutId="activeNavPill" className="nav-active-pill" />
+                    )}
+                    <span className={isActive ? 'nav-link-text active' : 'nav-link-text'}>{l.label}</span>
+                  </span>
+                )}
+              </NavLink>
+            ))}
+          </LayoutGroup>
         </nav>
 
         <div className="nav-right">
-          <a href="/contact" className="talk-btn nav-desktop">Let's talk ↗</a>
+          <a href="/photos/CV- Kavindu Hewamaddumage.pdf" download className="nav-desktop" style={{
+            background: 'linear-gradient(90deg, #34d399 0%, #06b6d4 100%)',
+            color: '#050810',
+            boxShadow: '0 12px 36px rgba(34, 211, 153, 0.14)',
+            borderRadius: '999px',
+            fontWeight: '700',
+            padding: '6px 14px',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontSize: '15px',
+            transition: 'transform 160ms ease'
+          }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'} onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
+            Download CV 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
           {/* Hamburger */}
           <button
             className="hamburger"
@@ -93,8 +117,27 @@ export default function Navbar() {
                 )}
               </NavLink>
             ))}
-            <a href="/contact" className="btn-primary-gradient mobile-talk-btn" onClick={() => setMenuOpen(false)}>
-              Let's talk ↗
+            <a href="/photos/resume.pdf" download className="mobile-talk-btn" onClick={() => setMenuOpen(false)} style={{ 
+              background: 'linear-gradient(90deg, #34d399 0%, #06b6d4 100%)',
+              color: '#050810',
+              boxShadow: '0 12px 36px rgba(34, 211, 153, 0.14)',
+              borderRadius: '999px',
+              fontWeight: '700',
+              padding: '12px 20px',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              fontSize: '16px',
+              marginTop: '12px'
+            }}>
+              Download CV 
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
             </a>
           </motion.nav>
         )}

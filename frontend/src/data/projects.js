@@ -25,7 +25,7 @@ export const projects = [
     title: "Rebuild Hub - Crowdsourced Disaster Relief & Aid Management Platform",
     description: "Full-stack disaster relief platform that connects donors, volunteers, and affected communities. Implements resource and inventory management, volunteer coordination, event and aid workflows, donation/payment processing, role-based authentication/authorization, Cloudinary media uploads, weather integration, input validations, and automated tests to ensure reliable API behavior and operational readiness",
     technologies: ["MongoDB", "Express.js", "React", "Node.js", "HTML", "CSS", "JavaScript","Github","Vite", "Cloudinary", "Jest","Stripe", "Google Map API", "Twilo", "Weather API", "HTML", "CSS", "JavaScript", "Git", "Render", "Vercel"],
-    link: "https://github.com/KavinduKHM/Rebuild-Hub"
+    link: "https://github.com/KavinduKHM/Rebuilld-Hub"
   },
   {
     _id: "proj-003",

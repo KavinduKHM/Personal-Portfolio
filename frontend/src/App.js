@@ -7,6 +7,15 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CaseStudy from "./components/CaseStudy";
 import Resume from "./components/Resume";
+import Footer from "./components/Footer";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function AppShell() {
   const location = useLocation();
@@ -14,6 +23,7 @@ function AppShell() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main className={isHome ? "" : "page-container"}>
         <Routes>
@@ -26,6 +36,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
