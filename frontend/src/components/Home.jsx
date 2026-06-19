@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const rotorText = '• OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK';
+  const rotorText = '• OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK ';
 
   return (
     <>
@@ -23,9 +23,7 @@ export default function Home() {
               </h1>
 
               <p className="hero-subtitle">
-                A dedicated <span className="hero-subtitle-strong">Software Engineering Undergraduate</span> with a
-                passion for building precise, high-performance digital solutions. Specializing in modern full-stack
-                development and architectural excellence.
+                <span className="hero-subtitle-strong">Software Engineering Undergraduate</span>
               </p>
 
               <div className="hero-pills" aria-label="Primary technologies">
