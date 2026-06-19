@@ -1,0 +1,143 @@
+/* Mobile Responsiveness Styles */
+
+@media (max-width: 1024px) {
+  /* Tablet / Smaller Desktop */
+  .page {
+    padding: 60px 5%;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 8vw, 80px);
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reset bento spans for 2 columns */
+  .span-backend, .span-tools { grid-column: span 2; }
+  .span-frontend, .span-technologies, .span-soft, .span-mobile, .span-qa { grid-column: span 1; }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-ctas, .hero-actions, .hero-socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Devices */
+  .page {
+    padding: 40px 20px;
+  }
+
+  .navbar-container {
+    width: calc(100% - 24px);
+    padding: 8px 16px;
+  }
+
+  .nav-desktop {
+    display: none !important;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 10vw, 50px);
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Reset all spans for single column */
+  .span-backend, .span-frontend, .span-technologies, .span-soft, .span-mobile, .span-tools, .span-qa {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .stats-strip {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Timeline (Projects Page) */
+  .timeline-container {
+    padding-left: 20px;
+  }
+
+  .timeline-line {
+    left: 20px !important;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 100% !important;
+    padding-left: 30px !important;
+    padding-right: 0 !important;
+  }
+
+  .timeline-item.left, .timeline-item.right {
+    left: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-dot {
+    left: 20px !important;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  /* Forms */
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Marquee */
+  .marquee-track {
+    gap: 24px;
+  }
+
+  .marquee-text {
+    font-size: 1.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.case-study-grid { grid-template-columns: 1fr; }
+@media (min-width: 769px) { .case-study-grid { grid-template-columns: 1fr 1fr; } }

@@ -82,7 +82,7 @@ export default function CaseStudy() {
 
         <div className="case-study-body" style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '1000px', margin: '0 auto' }}>
           
-          <div className="bento-grid" style={{ gridTemplateColumns: '1fr 1fr', gap: '32px', display: 'grid' }}>
+          <div className="case-study-grid" style={{ gap: '32px', display: 'grid' }}>
             <article className="glass card" style={{ padding: '32px' }}>
               <div className="hero-eyebrow" style={{ marginBottom: '16px', color: 'var(--accent)' }}>
                 <span className="hero-badge-dot" style={{ background: 'var(--accent)' }}></span>
