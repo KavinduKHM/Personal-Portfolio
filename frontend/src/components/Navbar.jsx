@@ -45,9 +45,9 @@ export default function Navbar() {
                 {({ isActive }) => (
                   <span className="nav-link-inner">
                     {isActive && (
-                      <motion.span layout layoutId="activeNavPill" className="nav-active-pill" />
+                      <motion.span layout layoutId="activeNavPill" className="nav-active-pill" style={{ position: "absolute", inset: 0, borderRadius: 9999, zIndex: 1 }} />
                     )}
-                    <span className={isActive ? 'nav-link-text active' : 'nav-link-text'}>{l.label}</span>
+                    <span style={{ position: "relative", zIndex: 2 }} className={isActive ? 'nav-link-text active' : 'nav-link-text'}>{l.label}</span>
                   </span>
                 )}
               </NavLink>
