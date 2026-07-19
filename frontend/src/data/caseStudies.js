@@ -85,16 +85,8 @@ export const caseStudies = {
     // ],
     "demoVideos": [
       {
-        "url": "/photos/elixra1.mp4",
-        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 1" 
-      },
-      {
-        "url": "/photos/elixra2.mp4",
-        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 2"
-      },
-      {
-        "url": "/photos/elixra3.mp4",
-        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 3 "
+        "url": "/photos/elixra.mp4",
+        "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 1"
       }
     ]
   },
@@ -384,21 +376,21 @@ export const caseStudies = {
     outcome: "Users can now track category burn rates, monitor goals, and spot spending anomalies in under a minute. Month filter and charts reduced “where did my money go?” time by >50% (qualitative testing). Clear goal progress improves savings adherence.",
     keyFeatures: [
       "o	Category budgets with over/under indicators and summaries.\n",
-"o	Transaction CRUD with category assignment and monthly filtering.\n",
-"o	Savings goals tracking with progress visualization.\n",
-"o	Multi-visual analytics: category pie chart, spending heatmap, monthly trends.\n",
-"o	Sidebar-driven navigation and summary cards for quick health checks.\n"
+      "o	Transaction CRUD with category assignment and monthly filtering.\n",
+      "o	Savings goals tracking with progress visualization.\n",
+      "o	Multi-visual analytics: category pie chart, spending heatmap, monthly trends.\n",
+      "o	Sidebar-driven navigation and summary cards for quick health checks.\n"
 
     ],
     userResearch: {
-        participants: "8 early adopters (young professionals, students, and a freelancer managing mixed income)", 
-        insight: "Top pain points were lack of monthly clarity, difficulty comparing categories, and poor visibility into savings progress. Users preferred quick-glance visuals (pie/heatmap) plus simple forms for fast entry. Month-level filtering and clear goal progress were the most valued improvements." 
+      participants: "8 early adopters (young professionals, students, and a freelancer managing mixed income)",
+      insight: "Top pain points were lack of monthly clarity, difficulty comparing categories, and poor visibility into savings progress. Users preferred quick-glance visuals (pie/heatmap) plus simple forms for fast entry. Month-level filtering and clear goal progress were the most valued improvements."
     },
     technicalHighlights: [
       "o	React + Context to keep financial state consistent across dashboard, charts, and forms.",
-"o	Node/Express REST API with discrete controllers and models for categories, transactions, and goals.",
-"o	Chart-driven UI components (pie, heatmap, trend) fed by month-filtered data for fast, scoped insights.",
-"o	Modular components (sidebar, summary cards, forms, tables) to keep UX responsive and maintainable."
+      "o	Node/Express REST API with discrete controllers and models for categories, transactions, and goals.",
+      "o	Chart-driven UI components (pie, heatmap, trend) fed by month-filtered data for fast, scoped insights.",
+      "o	Modular components (sidebar, summary cards, forms, tables) to keep UX responsive and maintainable."
 
     ],
     screenshots: [
@@ -413,7 +405,7 @@ export const caseStudies = {
         caption: "Budget envelopes with category progress bars"
       },
       {
-        src:"/photos/Finance3.png",
+        src: "/photos/Finance3.png",
         alt: "Spending category heatmap",
         caption: "Heatmap showing spending intensity by category over months"
       }
@@ -434,24 +426,24 @@ export const caseStudies = {
     outcome: "Reduced admin coordination time and data errors by centralizing records; clearer student visibility into assignments and exams; faster event updates; and more consistent subject catalogs due to validation and controlled inserts/updates. Administrators report fewer date conflicts and quicker turnaround on schedule changes. Students gain a single portal for submissions and viewing PDFs, improving on-time completion.",
     keyFeatures: [
       "o	Assignment lifecycle: create/update/delete, submission handling, PDF viewing for uploaded work, existence checks to prevent duplicates.\n",
-"o	Exams management: insert/update/delete exams, list exams, and guard against conflicts via centralized data entry.\n",
-"o	Events management: add/update/delete events with validation on username length and required fields, plus consolidated event reader pages.\n",
-"o	Subject administration: insert/update/delete subjects with grade and subject-code validation, and retrieval of subject catalogs.\n",
-"o	Authentication: student/admin login with password exception handling and role-specific navigation.\n",
-"o	Student experience: dashboards for available assignments/exams/events, submission previews, and feedback pages for success/failure states.\n"
+      "o	Exams management: insert/update/delete exams, list exams, and guard against conflicts via centralized data entry.\n",
+      "o	Events management: add/update/delete events with validation on username length and required fields, plus consolidated event reader pages.\n",
+      "o	Subject administration: insert/update/delete subjects with grade and subject-code validation, and retrieval of subject catalogs.\n",
+      "o	Authentication: student/admin login with password exception handling and role-specific navigation.\n",
+      "o	Student experience: dashboards for available assignments/exams/events, submission previews, and feedback pages for success/failure states.\n"
 
     ],
     userResearch: {
-        participants: "12 users (2 principals, 4 admins/coordinators, 4 teachers, 2 student reps)", 
-        insight: "Admins needed faster bulk edits and validation to reduce bad data; teachers wanted a single place to post assignments and avoid duplicate entries; students valued a clear, date-ordered view of assignments/exams and the ability to preview submitted PDFs; principals required confidence that subjects and schedules were consistent across modules." 
+      participants: "12 users (2 principals, 4 admins/coordinators, 4 teachers, 2 student reps)",
+      insight: "Admins needed faster bulk edits and validation to reduce bad data; teachers wanted a single place to post assignments and avoid duplicate entries; students valued a clear, date-ordered view of assignments/exams and the ability to preview submitted PDFs; principals required confidence that subjects and schedules were consistent across modules."
     },
     technicalHighlights: [
       "o	Architecture: JSP/Servlet MVC-style pages with dedicated servlets per domain (assignments, exams, events, subjects) and shared DB utility classes.\n",
-"o	Data access: JDBC-based utilities for CRUD; per-module DBConnect/DbUtil classes encapsulate queries; servlet handlers for inserts/updates/deletes/listing.\n",
-"o	Validation: server-side checks for subject codes, grade ranges, username length, password rules, and duplicate assignment checks before insertion.\n",
-"o	Content delivery: PDF viewing servlet for assignment submissions; JSP pages for dashboards, previews, forms, and confirmation states.\n",
-"o	Separation of concerns: distinct packages for assignment, exam, event, subject, and auth flows to keep logic contained and maintainable.\n",
-"o	Deployability: standard WAR-style web app structure with WEB-INF descriptors (web.xml variants) and module-specific JSPs for admin/student views.\n"
+      "o	Data access: JDBC-based utilities for CRUD; per-module DBConnect/DbUtil classes encapsulate queries; servlet handlers for inserts/updates/deletes/listing.\n",
+      "o	Validation: server-side checks for subject codes, grade ranges, username length, password rules, and duplicate assignment checks before insertion.\n",
+      "o	Content delivery: PDF viewing servlet for assignment submissions; JSP pages for dashboards, previews, forms, and confirmation states.\n",
+      "o	Separation of concerns: distinct packages for assignment, exam, event, subject, and auth flows to keep logic contained and maintainable.\n",
+      "o	Deployability: standard WAR-style web app structure with WEB-INF descriptors (web.xml variants) and module-specific JSPs for admin/student views.\n"
 
     ],
     screenshots: [
@@ -487,19 +479,19 @@ export const caseStudies = {
     outcome: "•	Faster onboarding: clear signup/login and profile setup flows.\n•	Reduced admin overhead: package/user/report CRUD in one place.\n•	Higher claim transparency: dedicated request/edit/delete pages give users and admins visibility and control.\n•	Improved trust: FAQ, terms, privacy, and contact surfaces reduce uncertainty and support requests.\n",
     keyFeatures: [
       "•	Customer: plan browsing (family, children, complete coverage), signup/login, profile setup/edit, payments, claim request/edit/delete, FAQs, reviews.\n",
-"•	Admin: package add/edit/delete, user add/edit/delete, report add/edit/delete, claim management and approvals, analytics view.\n",
-"•	Shared components: modern navbar/footer, navigation scripts, header/footer JS/CSS, consistent styling across pages.\n",
-"•	Forms & validation: structured inputs for claims, packages, signup, and profile setup with client-side JS and PHP handling.\n",
-"•	Content trust: privacy policy, terms & conditions, FAQ/reviews, contact channels.\n",
-"•	Media & branding: hero imagery and cards to clarify plan categories and offers.\n",
+      "•	Admin: package add/edit/delete, user add/edit/delete, report add/edit/delete, claim management and approvals, analytics view.\n",
+      "•	Shared components: modern navbar/footer, navigation scripts, header/footer JS/CSS, consistent styling across pages.\n",
+      "•	Forms & validation: structured inputs for claims, packages, signup, and profile setup with client-side JS and PHP handling.\n",
+      "•	Content trust: privacy policy, terms & conditions, FAQ/reviews, contact channels.\n",
+      "•	Media & branding: hero imagery and cards to clarify plan categories and offers.\n",
     ],
     technicalHighlights: [
       "•	Frontend: HTML/CSS with modular styles (home, FAQ, plans, profile, navbar/footer), JS for navigation, tabs, validation, and interactive forms.\n",
-"•	Backend: PHP endpoints for authentication, package/claim/report CRUD, and DB connectivity via shared config/connection files.\n",
-"•	Information architecture: dedicated pages per flow (Signup, Login, Profile Setup, Claim Add/Edit/Delete/Request, Package Add/Edit/Delete, Report Add/Edit/Delete) to keep responsibilities clear.\n",
-"•	Reuse: shared header/footer components and navigation scripts to reduce duplication and ensure consistent UI.\n",
-"•	Data integrity: form-driven workflows for claims and packages to minimize submission errors and maintain traceable updates.\n",
-"•	Analytics-ready: admin analytic page and report pages to monitor operational metrics.\n",
+      "•	Backend: PHP endpoints for authentication, package/claim/report CRUD, and DB connectivity via shared config/connection files.\n",
+      "•	Information architecture: dedicated pages per flow (Signup, Login, Profile Setup, Claim Add/Edit/Delete/Request, Package Add/Edit/Delete, Report Add/Edit/Delete) to keep responsibilities clear.\n",
+      "•	Reuse: shared header/footer components and navigation scripts to reduce duplication and ensure consistent UI.\n",
+      "•	Data integrity: form-driven workflows for claims and packages to minimize submission errors and maintain traceable updates.\n",
+      "•	Analytics-ready: admin analytic page and report pages to monitor operational metrics.\n",
 
     ],
     screenshots: [
