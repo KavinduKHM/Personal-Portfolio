@@ -84,6 +84,7 @@ export const caseStudies = {
     //   }
     // ],
     "demoVideos": [
+
       {
         "url": "/photos/Elixra.mp4",
         "title": "End‑to‑end walkthrough: patient registration → AI symptom check → doctor booking → video consultation → prescription - Part 1"
